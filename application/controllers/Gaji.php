@@ -35,9 +35,6 @@ class Gaji extends CI_Controller {
 		$this->load->model('M_karyawan','mkar');
 		$this->load->library('form_validation');
 
-		$this->form_validation->set_rules('idkaryawan', 'Nama Karyawan', 'trim|required');
-		$this->form_validation->set_rules('tanggal', 'Tanggal Penerimaan', 'trim|required');
-
 		if ($this->form_validation->run() == FALSE) {
 			$data = [
 				'title' => 'Tambah Data Penggajian',
