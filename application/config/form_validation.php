@@ -11,17 +11,17 @@ $config = [
 			[
 				'field' => 'masakerja',
 				'label' => 'Masa Kerja',
-				'rules' => 'trim|required|numeric|greater_than[0]|max_length[2]'
+				'rules' => 'trim|required|is_natural_no_zero|max_length[2]'
 			],
 			[
 				'field' => 'insentif',
 				'label' => 'Insentif',
-				'rules' => 'trim|required|numeric|greater_than[0]'
+				'rules' => 'trim|required|is_natural_no_zero'
 			],
 			[
 				'field' => 'bonus',
 				'label' => 'Bonus',
-				'rules' => 'trim|required|numeric|greater_than[0]'
+				'rules' => 'trim|required|is_natural_no_zero'
 			],
 	],
 	
@@ -34,17 +34,17 @@ $config = [
 			[
 				'field' => 'masakerja',
 				'label' => 'Masa Kerja',
-				'rules' => 'trim|required|numeric|greater_than[0]|max_length[2]'
+				'rules' => 'trim|required|is_natural_no_zero|max_length[2]'
 			],
 			[
 				'field' => 'insentif',
 				'label' => 'Insentif',
-				'rules' => 'trim|required|numeric|greater_than[0]'
+				'rules' => 'trim|required|is_natural_no_zero'
 			],
 			[
 				'field' => 'bonus',
 				'label' => 'Bonus',
-				'rules' => 'trim|required|numeric|greater_than[0]'
+				'rules' => 'trim|required|is_natural_no_zero'
 			],
 	],
 	
@@ -62,7 +62,7 @@ $config = [
 			[
 				'field' => 'gaji',
 				'label' => 'Gaji',
-				'rules' => 'trim|required|numeric|greater_than[0]'
+				'rules' => 'trim|required|is_natural_no_zero'
 			],
 	],
 	
@@ -80,7 +80,7 @@ $config = [
 			[
 				'field' => 'gaji',
 				'label' => 'Gaji',
-				'rules' => 'trim|required|numeric|greater_than[0]'
+				'rules' => 'trim|required|is_natural_no_zero'
 			],
 	],
 	
@@ -123,12 +123,12 @@ $config = [
 			[
 				'field' => 'masakerja',
 				'label' => 'Masa Kerja',
-				'rules' => 'trim|required|numeric|greater_than[0]|max_length[2]'
+				'rules' => 'trim|required|is_natural_no_zero|max_length[2]'
 			],
 			[
 				'field' => 'idjabatan',
 				'label' => 'Jabatan',
-				'rules' => 'trim|required|numeric'
+				'rules' => 'trim|required|is_natural_no_zero'
 			],
 	],
 	
@@ -166,12 +166,31 @@ $config = [
 			[
 				'field' => 'masakerja',
 				'label' => 'Masa Kerja',
-				'rules' => 'trim|required|numeric|greater_than[0]|max_length[2]'
+				'rules' => 'trim|required|is_natural_no_zero|max_length[2]'
 			],
 			[
 				'field' => 'idjabatan',
 				'label' => 'Jabatan',
-				'rules' => 'trim|required|numeric'
+				'rules' => 'trim|required|is_natural_no_zero'
 			],
 	],
+	
+	'gaji/tambah' => [
+			[
+				'field' => 'idkaryawan',
+				'label' => 'Nama Karyawan',
+				'rules' => 'trim|required|is_natural_no_zero'
+			],
+			[
+				'field' => 'jabatan',
+				'label' => 'Jabatan',
+				'rules' => 'trim|required'
+			],
+			[
+				'field' => 'gaji',
+				'label' => 'Gaji',
+				'rules' => 'trim|required|is_natural_no_zero'
+			],
+	],
+
 ];
