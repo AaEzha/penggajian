@@ -24,16 +24,6 @@ class Karyawan extends CI_Controller {
 		$this->load->model('M_jabatan','mjab');
 		$this->load->library('form_validation');
 
-		$this->form_validation->set_rules('nama', 'Nama Karyawan', 'trim|required');
-		$this->form_validation->set_rules('jk', 'Jenis Kelamin', 'trim|required');
-		$this->form_validation->set_rules('tgl_lahir', 'Tanggal Lahir', 'trim|required');
-		$this->form_validation->set_rules('alamat', 'Alamat', 'trim|required');
-		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
-		$this->form_validation->set_rules('telp', 'No.Telepon', 'trim|required|numeric');
-		$this->form_validation->set_rules('nip', 'NIP', 'trim|required|numeric|is_unique[karyawan.nip]');
-		$this->form_validation->set_rules('masakerja', 'Masa Kerja', 'trim|required|numeric');
-		$this->form_validation->set_rules('idjabatan', 'Jabatan', 'trim|required|numeric');
-
 		if ($this->form_validation->run() == FALSE) {
 			$data = [
 				'title' => 'Tambah Data Karyawan',
@@ -58,15 +48,6 @@ class Karyawan extends CI_Controller {
 		if(!$id or $id<1 or $id=='') redirect('karyawan','refresh');
 		$this->load->model('M_jabatan','mjab');
 		$this->load->library('form_validation');
-
-		$this->form_validation->set_rules('nama', 'Nama Karyawan', 'trim|required');
-		$this->form_validation->set_rules('jk', 'Jenis Kelamin', 'trim|required');
-		$this->form_validation->set_rules('tgl_lahir', 'Tanggal Lahir', 'trim|required');
-		$this->form_validation->set_rules('alamat', 'Alamat', 'trim|required');
-		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
-		$this->form_validation->set_rules('telp', 'No.Telepon', 'trim|required|numeric');
-		$this->form_validation->set_rules('masakerja', 'Masa Kerja', 'trim|required|numeric');
-		$this->form_validation->set_rules('idjabatan', 'Jabatan', 'trim|required|numeric');
 
 		if ($this->form_validation->run() == FALSE) {
 			$data = [
