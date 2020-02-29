@@ -23,10 +23,6 @@ class Jabatan extends CI_Controller {
 	{
 		$this->load->library('form_validation');
 
-		$this->form_validation->set_rules('kode', 'Kode Jabatan', 'trim|required|is_unique[jabatan.kode]');
-		$this->form_validation->set_rules('jabatan', 'Jabatan', 'trim|required');
-		$this->form_validation->set_rules('gaji', 'Gaji', 'trim|required|numeric');
-
 		if ($this->form_validation->run() == FALSE) {
 			$data = [
 				'title' => 'Tambah Data Jabatan',
@@ -48,9 +44,6 @@ class Jabatan extends CI_Controller {
 	{
 		if(!$id or $id<1 or $id=='') redirect('jabatan','refresh');
 		$this->load->library('form_validation');
-
-		$this->form_validation->set_rules('jabatan', 'Jabatan', 'trim|required');
-		$this->form_validation->set_rules('gaji', 'Gaji', 'trim|required|numeric');
 
 		if ($this->form_validation->run() == FALSE) {
 			$data = [
