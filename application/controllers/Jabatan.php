@@ -19,6 +19,33 @@ class Jabatan extends CI_Controller {
 		$this->load->view('template/index', $data);
 	}
 
+	public function validasi()
+	{
+		$data = [
+			[
+				'field' => 'jabatan',
+				'label' => 'Jabatan',
+				'rules' => 'trim|required'
+			],
+			[
+				'field' => 'masakerja',
+				'label' => 'Masa Kerja',
+				'rules' => 'trim|required|numeric|greater_than[0]|max_length[2]'
+			],
+			[
+				'field' => 'insentif',
+				'label' => 'Insentif',
+				'rules' => 'trim|required|numeric|greater_than[0]'
+			],
+			[
+				'field' => 'bonus',
+				'label' => 'Bonus',
+				'rules' => 'trim|required|numeric|greater_than[0]'
+			],
+		];
+		return $data;
+	}
+
 	public function tambah()
 	{
 		$this->load->library('form_validation');
