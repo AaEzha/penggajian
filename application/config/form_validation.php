@@ -182,14 +182,9 @@ $config = [
 				'rules' => 'trim|required|is_natural_no_zero'
 			],
 			[
-				'field' => 'jabatan',
-				'label' => 'Jabatan',
+				'field' => 'tanggal',
+				'label' => 'Tanggal Penerimaan',
 				'rules' => 'trim|required'
-			],
-			[
-				'field' => 'gaji',
-				'label' => 'Gaji',
-				'rules' => 'trim|required|is_natural_no_zero'
 			],
 	],
 
