@@ -1236,6 +1236,7 @@ class CI_Form_validation {
 	 */
 	public function valid_email($str)
 	{
+		if(!defined('INTL_IDNA_VARIANT_UTS46')) { define ('INTL_IDNA_VARIANT_UTS46', 1); }
 		if (function_exists('idn_to_ascii') && preg_match('#\A([^@]+)@(.+)\z#', $str, $matches))
 		{
 			$domain = defined('INTL_IDNA_VARIANT_UTS46')

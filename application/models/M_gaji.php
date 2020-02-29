@@ -61,21 +61,30 @@ class M_gaji extends CI_Model {
 				 ->get()
 				 ->row();
 		;
-		return $data->$jenis;
+		if(isset($data)){
+			return $data->$jenis;
+		}else{
+			return false;
+		}
 	}
 
 	public function tambah()
 	{
 		$post = $this->input->post();
 		$idkaryawan = htmlspecialchars(trim($post['idkaryawan']));
-		$data = [
-			'idkaryawan' => $idkaryawan,
-			'nominal' => $this->nominal($idkaryawan),
-			'insentif' => $this->bonus($idkaryawan,'insentif'),
-			'bonus' => $this->bonus($idkaryawan,'bonus'),
-			'tanggal' => htmlspecialchars(trim($post['tanggal']))
-		];
-		return $this->db->insert('gaji',$data);
+		if($this->bonus($idkaryawan,'bonus') and $this->bonus($idkaryawan,'insentif')){
+			$data = [
+				'idkaryawan' => $idkaryawan,
+				'nominal' => $this->nominal($idkaryawan),
+				'insentif' => $this->bonus($idkaryawan,'insentif'),
+				'bonus' => $this->bonus($idkaryawan,'bonus'),
+				'tanggal' => htmlspecialchars(trim($post['tanggal']))
+			];
+		
+			return $this->db->insert('gaji',$data);
+		}else{
+			return false;
+		}
 	}
 
 	public function hapus($id)

@@ -53,7 +53,7 @@ class Gaji extends CI_Controller {
 			} else {
 				$this->session->set_flashdata('name', '<div class="alert alert-danger" role="alert">Data gagal ditambah!</div>');
 			}
-			redirect('gaji','refresh');
+			//redirect('gaji','refresh');
 		}
 	}
 
