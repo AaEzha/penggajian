@@ -24,6 +24,7 @@ $config = [
 				'rules' => 'trim|required|numeric|greater_than[0]'
 			],
 	],
+	
 	'pengaturan/ubah' => [
 			[
 				'field' => 'jabatan',
@@ -43,6 +44,42 @@ $config = [
 			[
 				'field' => 'bonus',
 				'label' => 'Bonus',
+				'rules' => 'trim|required|numeric|greater_than[0]'
+			],
+	],
+	
+	'jabatan/tambah' => [
+			[
+				'field' => 'kode',
+				'label' => 'Kode Jabatan',
+				'rules' => 'trim|required|is_unique[jabatan.kode]'
+			],
+			[
+				'field' => 'jabatan',
+				'label' => 'Jabatan',
+				'rules' => 'trim|required'
+			],
+			[
+				'field' => 'gaji',
+				'label' => 'Gaji',
+				'rules' => 'trim|required|numeric|greater_than[0]'
+			],
+	],
+	
+	'jabatan/ubah' => [
+			[
+				'field' => 'kode',
+				'label' => 'Kode Jabatan',
+				'rules' => 'trim|required'
+			],
+			[
+				'field' => 'jabatan',
+				'label' => 'Jabatan',
+				'rules' => 'trim|required'
+			],
+			[
+				'field' => 'gaji',
+				'label' => 'Gaji',
 				'rules' => 'trim|required|numeric|greater_than[0]'
 			],
 	],
